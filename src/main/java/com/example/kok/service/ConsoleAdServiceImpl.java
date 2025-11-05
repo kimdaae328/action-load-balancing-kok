@@ -59,7 +59,6 @@ public class ConsoleAdServiceImpl implements ConsoleAdService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public ConsoleAdNoticeDTO getDetail(Long id) {
         return consoleAdDAO.findDetailById(id);
     }
