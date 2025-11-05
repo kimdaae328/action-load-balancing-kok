@@ -2128,8 +2128,7 @@ input:-internal-autofill-selected {
         border: 0;
     }
 
-    .sort-options + .list-container,
-    .sort-options + .int-wrapper{
+    .sort-options + .list-container {
         height: calc(100% - 240px);
     }
 
