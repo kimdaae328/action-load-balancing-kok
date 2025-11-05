@@ -451,6 +451,7 @@
 
 .sort-options + .list-container, .sort-options + .int-wrapper {
     height: calc(100% - 56px);
+    overflow-y: auto;
 }
 
 .list-item {
