@@ -44,7 +44,7 @@ jobs:
           docker rm docker-kok || true
           docker rmi docker-kok || true
           docker build --build-arg JWT_SECRET=${{ secrets.JWT_SECRET }} \
-            --build-arg EC2_HOST=$HOST \
+            --build-arg EC2_HOST=${{ secrets.EC2_HOST }} \
             --build-arg EC2_DATABASE_PASSWORD=${{ secrets.EC2_DATABASE_PASSWORD }} \
             --build-arg AWS_ACCESS_KEY_ID=docker-kok${{ secrets.AWS_ACCESS_KEY_ID }} \
             --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
@@ -58,7 +58,7 @@ jobs:
             --build-arg EMAIL_PASSWORD="${{ secrets.EMAIL_PASSWORD }}" \
           -t docker-kok .
           docker run -d -p 80:10000 --name docker-kok \
-            -e EC2_HOST=$HOST \
+            -e EC2_HOST=${{ secrets.EC2_HOST }} \
             -e EC2_DATABASE_PASSWORD=${{ secrets.EC2_DATABASE_PASSWORD }} \
             -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
             -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
