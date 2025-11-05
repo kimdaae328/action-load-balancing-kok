@@ -59,7 +59,7 @@ public class ConsoleAdServiceImpl implements ConsoleAdService {
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional(readOnly = true)
     public ConsoleAdNoticeDTO getDetail(Long id) {
         return consoleAdDAO.findDetailById(id);
     }
