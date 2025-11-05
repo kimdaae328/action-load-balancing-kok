@@ -60,7 +60,6 @@ public class ConsoleAdServiceImpl implements ConsoleAdService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    @Cacheable(value = "posts", key="'post_' + #id")
     public ConsoleAdNoticeDTO getDetail(Long id) {
         return consoleAdDAO.findDetailById(id);
     }

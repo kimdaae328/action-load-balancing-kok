@@ -35,7 +35,7 @@
         from tbl_advertisement a
             left join tbl_payment p
                 on a.id = p.advertisement_id
-        where a.company_id = #{companyId}
+        where a.company_id = 1;
         <if test="status != null">
             <choose>
                 <when test="status.name() == 'ACCEPT'">
