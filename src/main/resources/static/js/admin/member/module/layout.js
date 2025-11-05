@@ -125,7 +125,7 @@ const layout = (() => {
                         <td>${experiences.companyName}</td>
                         <td>${experiences.experienceNoticeTitle}</td>
                         <td style="text-align: center;">${status}</td>
-                        <td style="text-align: center;">${experiences.evaluationAvgScore}</td>
+                        <td style="text-align: center;">${experiences.evaluationAvgScore ?? '-'}</td>
                     </tr>
                 `
             })

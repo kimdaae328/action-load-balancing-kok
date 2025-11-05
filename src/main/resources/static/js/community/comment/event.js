@@ -17,10 +17,11 @@ document.body.addEventListener("click", async (e) => {
     const postId = modal.dataset.postId;
 
     // 댓글 작성
-    if (target.closest(".reply-14 .enter")) {
+    if (target.closest(".reply-14 .enter") || target.closest(".reply-mobile .enter")) {
         const modal = document.getElementById("post-detail-modal");
         const postId = modal.dataset.postId;
-        const textarea = modal.querySelector(".reply-14 .replytext");
+        const parent = target.closest(".reply-17");
+        const textarea = parent.querySelector(".replytext");
         const content = textarea.value.trim();
 
         if (!content) {
@@ -36,6 +37,7 @@ document.body.addEventListener("click", async (e) => {
 
             textarea.value = "";
 
+            // 댓글 새로고침
             const commentContainer = modal.querySelector(".reply-10");
             commentContainer.innerHTML = "";
             await showComments(postId);

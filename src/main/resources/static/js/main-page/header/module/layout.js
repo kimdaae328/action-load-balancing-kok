@@ -167,11 +167,11 @@ const headerLayout = (() => {
                                     </div>
                                     <div class="history-detail-modal-status-wrap">
                                         <div class="history-detail-modal-status">`
-            if(experienceDetailDTO[0].requestExperienceStatus === 'accept') {
-                text += `<span class="history-detail-modal-status-text">합격</span>`
-            }else {
-                text += `<span class="history-detail-modal-status-text">서류 접수</span>`
-            }
+        if(experienceDetailDTO[0].requestExperienceStatus === 'accept') {
+            text += `<span class="history-detail-modal-status-text">합격</span>`
+        }else {
+            text += `<span class="history-detail-modal-status-text">서류 접수</span>`
+        }
 
         text += `
                                         </div>
@@ -217,12 +217,12 @@ const headerLayout = (() => {
                                 </div>
                                 <div class="body-section-user-info-wrap">
                                     <div class="body-section-user-info-text-wrap">`
-                            if(experienceDetailDTO[0].requestExperienceMemberUrl === null){
-                                text+= `<a  class="body-section-user-url-text" >입력하신 url이 없습니다.</a>`
-                            }else{
+        if(experienceDetailDTO[0].requestExperienceMemberUrl === null){
+            text+= `<a  class="body-section-user-url-text" >입력하신 url이 없습니다.</a>`
+        }else{
 
-                                text+= `<a href="${experienceDetailDTO[0].requestExperienceMemberUrl}" class="body-section-user-url-text" >${experienceDetailDTO[0].requestExperienceMemberUrl}</a>`
-                            }
+            text+= `<a href="${experienceDetailDTO[0].requestExperienceMemberUrl}" class="body-section-user-url-text" >${experienceDetailDTO[0].requestExperienceMemberUrl}</a>`
+        }
         text+=`
                                     </div>
                                     <div class="body-section-user-url">
@@ -354,6 +354,6 @@ const headerLayout = (() => {
         warp.innerHTML=text;
     }
 
-return {showExperienceList: showExperienceList,showInternList:showInternList,showExperienceDetail:showExperienceDetail,showInternDetail:showInternDetail}
+    return {showExperienceList: showExperienceList,showInternList:showInternList,showExperienceDetail:showExperienceDetail,showInternDetail:showInternDetail}
 })
 ();
