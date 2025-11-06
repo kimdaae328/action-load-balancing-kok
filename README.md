@@ -72,16 +72,5 @@ Nginx가 자동으로 트래픽을 균등하게 분배한다.
 
 ---
 
-## 요약
-
-- **Nginx / AWS ELB** 를 통해 트래픽을 분산  
-- **다중 EC2 서버 구성**으로 안정성 강화  
-- **Docker + CI/CD + Load Balancer** 조합으로 완전 자동화 배포 환경 구축  
-
-결과적으로, 높은 트래픽 상황에서도  
-**안정적이고 유연한 서비스 운영이 가능한 인프라**를 완성했다.
-
----
-
 ## CI/CD 워크플로우 단계
 <img width="2560" height="1440" alt="cicd2" src="https://github.com/user-attachments/assets/b9a9ff12-12d2-4018-a7e8-1cac09e27b61" />
