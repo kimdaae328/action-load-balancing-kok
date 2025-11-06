@@ -25,6 +25,8 @@ public class ConsoleAdApiController implements ConsoleAdApiControllerDocs {
                                                             @PathVariable("page") int page,
                                                             @RequestParam(required = false) String keyword) {
 
+        log.info("광고 리스트 요청: companyId={}, page={}, keyword={}", companyId, page, keyword);
+
         ConsoleAdNoticeCriteriaDTO adCriteriaDTO = adService.getList(companyId, page, keyword);
         if (adCriteriaDTO == null || adCriteriaDTO.getAdLists().size() == 0) {
             return ResponseEntity.ok(adCriteriaDTO);
