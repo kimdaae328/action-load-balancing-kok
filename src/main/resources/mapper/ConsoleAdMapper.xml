@@ -4,17 +4,17 @@
     <!--회사별 광고 목록-->
     <select id="selectAdByCompany">
         select
-            a.id,
-            a.advertisement_main_text,
-            a.advertisement_sub_text,
-            a.advertisement_status,
-            a.advertisement_request_status,
-            a.advertise_start_datetime,
-            a.advertise_end_datetime,
-            coalesce(max(p.payment_price),0) as payment_price
+        a.id,
+        a.advertisement_main_text,
+        a.advertisement_sub_text,
+        a.advertisement_status,
+        a.advertisement_request_status,
+        a.advertise_start_datetime,
+        a.advertise_end_datetime,
+        coalesce(max(p.payment_price),0) as payment_price
         from tbl_advertisement a
         join tbl_payment p
-            on a.id = p.advertisement_id
+        on a.id = p.advertisement_id
         where a.company_id = #{companyId}
         <if test="keyword != null and keyword != ''">
             and (
@@ -22,9 +22,9 @@
             )
         </if>
         group by
-            a.id, a.advertisement_main_text, a.advertisement_sub_text,
-            a.advertisement_request_status, a.advertise_start_datetime, a.advertise_end_datetime,
-            a.created_datetime
+        a.id, a.advertisement_main_text, a.advertisement_sub_text,
+        a.advertisement_request_status, a.advertise_start_datetime, a.advertise_end_datetime,
+        a.created_datetime
         order by a.created_datetime desc
         limit #{criteria.count} offset #{criteria.offset}
     </select>
@@ -33,9 +33,9 @@
     <select id="selectCountByCompany">
         select count(distinct a.id)
         from tbl_advertisement a
-            left join tbl_payment p
-                on a.id = p.advertisement_id
-        where a.company_id = 1;
+        left join tbl_payment p
+        on a.id = p.advertisement_id
+        where a.company_id = #{companyId}
         <if test="status != null">
             <choose>
                 <when test="status.name() == 'ACCEPT'">
@@ -54,10 +54,10 @@
     <select id="selectActiveTotalPriceByCompany">
         select coalesce(sum(p.payment_price), 0)
         from tbl_advertisement a
-            join tbl_payment p
-                on a.id = p.advertisement_id
+                 join tbl_payment p
+                      on a.id = p.advertisement_id
         where a.company_id = #{companyId}
-            and a.advertisement_request_status = 'accept'
+          and a.advertisement_request_status = 'accept'
     </select>
 
     <!-- 광고 등록 -->
@@ -72,14 +72,14 @@
             company_id
         )
         values (
-            #{advertisementMainText},
-            #{advertisementSubText},
-            'active',
-            'await',
-            #{advertiseStartDatetime}::date,
-            #{advertiseEndDatetime}::date,
-            #{companyId}
-        )
+                   #{advertisementMainText},
+                   #{advertisementSubText},
+                   'active',
+                   'await',
+                   #{advertiseStartDatetime}::date,
+                   #{advertiseEndDatetime}::date,
+                   #{companyId}
+               )
     </insert>
 
     <!-- 결제 내역 등록 -->
@@ -91,11 +91,11 @@
             user_id
         )
         values (
-            #{paymentPrice},
-            'active',
-            #{advertisementId},
-            #{userId}
-        )
+                   #{paymentPrice},
+                   'active',
+                   #{advertisementId},
+                   #{userId}
+               )
     </insert>
 
     <!-- 광고 수정 -->
@@ -148,4 +148,3 @@
         ]]>
     </update>
 </mapper>
-
