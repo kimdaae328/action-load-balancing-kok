@@ -110,7 +110,7 @@ public class MainpageServiceImpl implements MainpageService {
     public List<RequestInternDTO> findRequestInternByCompanyId(Long companyId,Long internId) {
         List<RequestInternDTO> requestInternDTO = requestInternDAO.selectAllInternByUserId(companyId, internId);
         requestInternDTO.forEach(internDTO -> {
-            if(companyProfileFileDAO.findFileByCompanyId(internDTO.getUserId()).getFilePath()!=null){
+            if(companyProfileFileDAO.findCountByCompanyId(internDTO.getUserId())>0){
                 internDTO.setCompanyProfileUrl(s3Service.getPreSignedUrl(companyProfileFileDAO.findFileByCompanyId(internDTO.getUserId()).getFilePath(),Duration.ofMinutes(10)));
             }else{
                 internDTO.setCompanyProfileUrl("/images/main-page/image.png");

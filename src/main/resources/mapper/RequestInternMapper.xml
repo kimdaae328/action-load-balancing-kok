@@ -12,7 +12,7 @@
         where member_id = #{id}
     </select>
 
-    <!--    지원서 넣기-->
+    <!-- 지원서 넣기-->
     <insert id="insertRequest" useGeneratedKeys="true" keyProperty="id">
         insert into tbl_request_intern(intern_notice_id, member_id, member_alarm_setting_id, request_intern_member_name, request_intern_member_email, request_intern_member_phone, request_intern_member_url, file_id)
         values(#{internNoticeId}, #{memberId}, #{memberAlarmSettingId}, #{requestInternMemberName}, #{requestInternMemberEmail}, #{requestInternMemberPhone}, #{requestInternMemberUrl}, #{fileId})
@@ -31,8 +31,8 @@
                       on c.user_id = n.company_id
                  join tbl_request_intern r
                       on n.id = r.intern_notice_id
-                 join tbl_evaluation e
-                      on r.id = e.request_experience_id
+                 left join tbl_evaluation e
+                           on r.id = e.request_experience_id
         where r.member_id = #{id}
         order by created_datetime desc
         limit 3
@@ -46,8 +46,8 @@
                       on c.user_id = n.company_id
                  join tbl_request_intern r
                       on n.id = r.intern_notice_id
-                 join tbl_evaluation e
-                      on r.id = e.request_experience_id
+                 left join tbl_evaluation e
+                           on r.id = e.request_experience_id
         where r.member_id = #{id}
     </select>
 
@@ -79,7 +79,7 @@
         select count(*)
         from tbl_request_intern
         where intern_notice_id=#{internNoticeId}
-        and member_id=#{memberId}
-        and request_intern_active='active'
+          and member_id=#{memberId}
+          and request_intern_active='active'
     </select>
 </mapper>
