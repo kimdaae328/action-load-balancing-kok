@@ -24,7 +24,7 @@
         group by
             a.id, a.advertisement_main_text, a.advertisement_sub_text,
             a.advertisement_request_status, a.advertise_start_datetime, a.advertise_end_datetime,
-            a.created_datetime, a.advertisement_status
+            a.created_datetime
         order by a.created_datetime desc
         limit #{criteria.count} offset #{criteria.offset}
     </select>
