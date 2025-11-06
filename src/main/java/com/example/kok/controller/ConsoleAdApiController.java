@@ -22,8 +22,8 @@ public class ConsoleAdApiController implements ConsoleAdApiControllerDocs {
 //    목록
     @GetMapping("/list/{companyId}/{page}")
     public ResponseEntity<ConsoleAdNoticeCriteriaDTO> list(@PathVariable("companyId") Long companyId,
-                                  @PathVariable("page") int page,
-                                  @RequestParam(required = false) String keyword) {
+                                                            @PathVariable("page") int page,
+                                                            @RequestParam(required = false) String keyword) {
 
         ConsoleAdNoticeCriteriaDTO adCriteriaDTO = adService.getList(companyId, page, keyword);
         if (adCriteriaDTO == null || adCriteriaDTO.getAdLists().size() == 0) {
