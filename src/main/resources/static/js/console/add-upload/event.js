@@ -41,6 +41,7 @@ const pay = async ({price, duration}) => {
                     id: idCheck,
                     advertisementMainText: document.querySelector("#ad-main-text").value,
                     advertisementSubText: document.querySelector("#ad-sub-text").value,
+                    advertisementLink: document.querySelector("#ad-link").value,
                     advertiseStartDatetime: document.querySelector("#start-date").value,
                     advertiseEndDatetime: document.querySelector("#end-date").value,
                     companyId: companyId,
@@ -301,6 +302,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = {
                 advertisementMainText: document.querySelector("#ad-main-text").value,
                 advertisementSubText: document.querySelector("#ad-sub-text").value,
+                advertisementLink: document.querySelector("#ad-link").value,
                 advertiseStartDatetime: document.querySelector("#start-date").value,
                 advertiseEndDatetime: document.querySelector("#end-date").value,
                 companyId: companyId,

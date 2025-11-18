@@ -69,7 +69,8 @@
             advertisement_request_status,
             advertise_start_datetime,
             advertise_end_datetime,
-            company_id
+            company_id,
+            advertisement_link
         )
         values (
                    #{advertisementMainText},
@@ -78,7 +79,8 @@
                    'await',
                    #{advertiseStartDatetime}::date,
                    #{advertiseEndDatetime}::date,
-                   #{companyId}
+                   #{companyId},
+                   #{advertisementLink}
                )
     </insert>
 
@@ -106,6 +108,7 @@
             advertisement_sub_text = #{advertisementSubText},
             advertise_start_datetime = #{advertiseStartDatetime}::date,
             advertise_end_datetime = #{advertiseEndDatetime}::date,
+            advertisement_link = #{advertisementLink},
             updated_datetime = now()
         where id = #{id}
     </update>
@@ -127,6 +130,7 @@
             a.advertise_start_datetime,
             a.advertise_end_datetime,
             a.advertisement_request_status,
+            a.advertisement_link,
             p.payment_price
         from tbl_advertisement a
                  left join tbl_payment p on a.id = p.advertisement_id

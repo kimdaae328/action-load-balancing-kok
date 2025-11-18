@@ -22,4 +22,5 @@ public class ConsoleAdNoticeVO extends Period{
     private String advertiseEndDatetime;
     private long companyId;
     private long paymentPrice;
+    private String advertisementLink;
 }

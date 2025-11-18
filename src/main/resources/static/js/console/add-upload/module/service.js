@@ -7,6 +7,7 @@ const adService = (() => {
         // 일반 텍스트 데이터 추가
         formData.append("advertisementMainText", data.advertisementMainText);
         formData.append("advertisementSubText", data.advertisementSubText);
+        formData.append("advertisementLink", data.advertisementLink);
         formData.append("companyId", data.companyId);
         formData.append("advertiseStartDatetime", data.advertiseStartDatetime);
         formData.append("advertiseEndDatetime", data.advertiseEndDatetime);
@@ -37,6 +38,7 @@ const adService = (() => {
 
         formData.append("advertisementMainText", data.advertisementMainText);
         formData.append("advertisementSubText", data.advertisementSubText);
+        formData.append("advertisementLink", data.advertisementLink);
         formData.append("companyId", data.companyId);
         formData.append("advertiseStartDatetime", data.advertiseStartDatetime);
         formData.append("advertiseEndDatetime", data.advertiseEndDatetime);

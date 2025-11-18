@@ -27,6 +27,7 @@ public class ConsoleAdNoticeDTO {
     private String createdDateTime;
     private String updatedDateTime;
     private long paymentPrice; // 금액
+    private String advertisementLink; // 링크 주소
 
     private List<FileDTO> uploadedFiles;
 }
