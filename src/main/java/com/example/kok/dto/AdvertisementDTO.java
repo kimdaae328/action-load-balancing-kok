@@ -19,6 +19,7 @@ public class AdvertisementDTO {
     private String advertiseStartDatetime;
     private String advertiseEndDatetime;
     private long companyId;
+    private String advertisementLink;
     private String createdDateTime;
     private String updatedDateTime;
 

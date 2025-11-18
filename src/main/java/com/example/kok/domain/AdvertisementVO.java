@@ -19,4 +19,5 @@ public class AdvertisementVO extends Period{
     private String startAdvertise;
     private String endAdvertise;
     private Long companyId;
+    private String advertisementLink;
 }

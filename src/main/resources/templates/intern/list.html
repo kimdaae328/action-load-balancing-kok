@@ -220,19 +220,21 @@
                                 </div>
                             </div>
                             <div class="banner-list">
-                                <div class="ad-banner" th:each="advertisement : ${advertisements}">
-                                    <div class="ad-text-box">
-                                        <p class="title" th:text="${advertisement.advertisementMainText}"></p>
-                                        <p class="desc" th:text="${advertisement.advertisementSubText}"></p>
-                                    </div>
-                                    <div class="ad-img">
-                                        <th:block th:if="${advertisement.filePath==null}">
-                                            <img src="/images/experience/ad_bg_img.jpg" alt="">
-                                        </th:block>
-                                        <th:block th:if="${advertisement.filePath!=null}">
-                                            <img th:src="${advertisement.filePath}" alt="">
-                                        </th:block>
-                                    </div>
+                                <div class="ad-banner" th:each="advertisement : ${advertisements}" th:data-id="${advertisement.id}">
+                                    <a th:href="${advertisement.advertisementLink}">
+                                        <div class="ad-text-box">
+                                            <p class="title" th:text="${advertisement.advertisementMainText}"></p>
+                                            <p class="desc" th:text="${advertisement.advertisementSubText}"></p>
+                                        </div>
+                                        <div class="ad-img">
+                                            <th:block th:if="${advertisement.filePath==null}">
+                                                <img src="/images/experience/ad_bg_img.jpg" alt="">
+                                            </th:block>
+                                            <th:block th:if="${advertisement.filePath!=null}">
+                                                <img th:src="${advertisement.filePath}" alt="">
+                                            </th:block>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
