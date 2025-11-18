@@ -1,7 +1,6 @@
 create table tbl_advertisement
 (
-    id                           bigint generated always as identity
-        primary key,
+    id                           bigint generated always as identity primary key,
     advertisement_main_text      varchar(255)                                   not null,
     advertisement_sub_text       varchar(255)                                   not null,
     advertisement_status         status         default 'active'::status        not null,

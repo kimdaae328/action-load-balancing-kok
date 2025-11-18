@@ -31,6 +31,9 @@ public interface ConsoleAdService {
 //    광고 마감 처리
     public void closeAd();
 
+//    한 달치 광고 목록
+    public List<ConsoleAdNoticeVO> getAdvertisementsInOneMonth();
+
     default ConsoleAdNoticeVO toConsoleAdVO(ConsoleAdNoticeDTO consoleAdDTO){
         return ConsoleAdNoticeVO.builder()
                 .id(consoleAdDTO.getId())

@@ -1,5 +1,6 @@
 package com.example.kok.service;
 
+import com.example.kok.domain.ConsoleAdNoticeVO;
 import com.example.kok.dto.*;
 import com.example.kok.enumeration.RequestStatus;
 import com.example.kok.enumeration.Status;
@@ -208,4 +209,9 @@ public class ConsoleAdServiceImpl implements ConsoleAdService {
         consoleAdDAO.setAdStatusToInactive();
     }
 
+//    한 달치 광고 목록
+    @Override
+    public List<ConsoleAdNoticeVO> getAdvertisementsInOneMonth() {
+        return consoleAdDAO.findAdvertisements();
+    }
 }

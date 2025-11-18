@@ -8,6 +8,7 @@ import com.example.kok.service.ExperienceNoticeService;
 import com.example.kok.service.InternNoticeService;
 import com.example.kok.util.Search;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequestMapping("/intern/**")
 @RequiredArgsConstructor
@@ -35,6 +37,7 @@ public class InternController {
         model.addAttribute("sharedInternId", sharedInternId);
         List<AdvertisementDTO> advertisements = advertisementService.getAllAdvertisements();
         model.addAttribute("advertisements", advertisements);
+        log.info("===============광고: {}", advertisements);
         String banner=experienceNoticeService.getBanner();
         model.addAttribute("banner",banner);
         return "intern/list";

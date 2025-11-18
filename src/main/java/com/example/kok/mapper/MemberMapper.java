@@ -68,4 +68,7 @@ public interface MemberMapper {
     public void insertProfileJob(Long id, String job);
     public void updateProfileUrl(Long id, String s3Key);
 
+//    로그인 시, 로그인 시간 업데이트
+    public void updateUpdatedDate(Long id);
+
 }

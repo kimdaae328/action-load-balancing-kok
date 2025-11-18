@@ -40,6 +40,7 @@ public class AuthController implements AuthControllerDocs{
     private final JwtTokenProvider jwtTokenProvider;
     private final HttpServletResponse response;
     private final UserService userService;
+    private final MemberService memberService;
     private final RedisTemplate redisTemplate;
 
 //    로그인
@@ -65,6 +66,8 @@ public class AuthController implements AuthControllerDocs{
             tokens.put("accessToken", accessToken);
             tokens.put("refreshToken", refreshToken);
 
+//            로그인 완료 후 현재 시간으로 updated_datetime 업데이트
+            memberService.updateUpdatedDate(((CustomUserDetails) authentication.getPrincipal()).getId());
 
             return ResponseEntity.ok(tokens);
 

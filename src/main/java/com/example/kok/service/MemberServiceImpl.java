@@ -298,4 +298,9 @@ public class MemberServiceImpl implements MemberService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         return today.format(formatter);
     }
+
+    @Override
+    public void updateUpdatedDate(Long id) {
+        memberDAO.setUpdatedDate(id);
+    }
 }

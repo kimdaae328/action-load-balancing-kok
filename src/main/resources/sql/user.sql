@@ -20,7 +20,9 @@ create table tbl_user
     sns_email        varchar(255)
 );
 
-select * from tbl_user;
+select * from tbl_user
+    where now() - interval '30 day' > updated_datetime;
 
 DELETE FROM tbl_user
 WHERE id = 4;
+

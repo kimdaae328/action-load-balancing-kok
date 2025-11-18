@@ -1,6 +1,7 @@
 package com.example.kok.controller;
 
 import com.example.kok.auth.CustomUserDetails;
+import com.example.kok.domain.ConsoleAdNoticeVO;
 import com.example.kok.dto.ConsoleAdNoticeDTO;
 import com.example.kok.service.ConsoleAdService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,6 +11,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -66,6 +69,12 @@ public class ConsoleAdController {
         model.addAttribute("memberName", memberName);
 
         return "enterprise-console/advertisement/console-add-upload";
+    }
+
+//    한 달치 광고 목록
+    @GetMapping("list/one-month")
+    public List<ConsoleAdNoticeVO> getAdvertisements(){
+        return consoleAdService.getAdvertisementsInOneMonth();
     }
 
 }

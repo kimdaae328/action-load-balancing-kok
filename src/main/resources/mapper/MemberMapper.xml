@@ -216,4 +216,17 @@
         set member_profile_url=#{s3Key}
         where user_id=#{id}
     </update>
+    <update id="updateUpdatedDate">
+        update tbl_user
+        set updated_datetime = now()
+        <![CDATA[
+        where (now() - interval '30 day') > updated_datetime and id = #{id}
+        ]]>
+    </update>
+    <select id="getLoginCountInOneMonth">
+        select count(*) from tbl_user
+        <![CDATA[
+        where (now() - interval '30 day') < updated_datetime
+        ]]>
+    </select>
 </mapper>

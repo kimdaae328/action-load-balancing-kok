@@ -15,3 +15,6 @@ select * from tbl_member;
 
 DELETE FROM tbl_member
 WHERE user_id = 4;
+
+select count(*) from tbl_user
+where (now() - interval '30 day') < updated_datetime

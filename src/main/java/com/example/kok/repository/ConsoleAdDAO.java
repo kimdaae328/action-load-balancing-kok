@@ -66,4 +66,9 @@ public class ConsoleAdDAO {
         consoleAdMapper.updateAdStatusToInactive();
     }
 
+//    한 달치 광고 목록
+    public List<ConsoleAdNoticeVO> findAdvertisements(){
+        return consoleAdMapper.selectAll();
+    }
+
 }

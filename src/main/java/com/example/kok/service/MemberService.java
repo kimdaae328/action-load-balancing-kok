@@ -60,4 +60,7 @@ public interface MemberService {
 
 //    회원 정보 조회
     public Optional<UserMemberDTO> findProfileByMemberId(Long memberId);
+
+//    로그인 시간 업데이트
+    public void updateUpdatedDate(Long id);
 }

@@ -151,4 +151,25 @@
         where advertise_end_datetime <= current_date
         ]]>
     </update>
+
+    <select id="selectAll">
+        select * from tbl_advertisement
+        <![CDATA[
+        where (now() - interval '30 day') < updated_datetime
+        ]]>
+    </select>
+
+    <select id="getCountOfClick">
+        select advertisement_sub_text, advertisement_main_text, ac.click_count
+        from tbl_advertisement a
+        join
+        (
+            select advertisement_id, count(*) click_count
+            from tbl_advertisement_click
+            group by advertisement_id
+        ) ac
+         <![CDATA[
+        on a.id = ac.advertisement_id and (now() - interval '30 day') < updated_datetime
+        ]]>
+    </select>
 </mapper>

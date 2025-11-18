@@ -137,4 +137,9 @@ public class MemberDAO {
     public void updateProfileUrl(Long id, String s3Key) {
         memberMapper.updateProfileUrl(id, s3Key);
     }
+
+//    로그인 시간 업데이트
+    public void setUpdatedDate(Long id){
+        memberMapper.updateUpdatedDate(id);
+    }
 }
