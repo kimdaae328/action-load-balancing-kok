@@ -32,10 +32,14 @@ public class InternController {
                               @RequestParam(required = false) String sharedCompanyId,
                               @RequestParam(required = false) String sharedInternId,
                               @ModelAttribute("search") Search search) {
+        log.info("===============진입 완료!");
+
         model.addAttribute("search", search);
         model.addAttribute("sharedCompanyId", sharedCompanyId);
         model.addAttribute("sharedInternId", sharedInternId);
         List<AdvertisementDTO> advertisements = advertisementService.getAllAdvertisements();
+        log.info("===============광고 리스트: {}", advertisements);
+
         model.addAttribute("advertisements", advertisements);
         log.info("===============광고: {}", advertisements);
         String banner=experienceNoticeService.getBanner();
