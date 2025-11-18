@@ -18,3 +18,6 @@ create table tbl_advertisement
 
 select * from tbl_advertisement;
 
+-- update tbl_advertisement
+-- set advertisement_link = 'http://kok-place.store/company/62'
+-- where id = 107
