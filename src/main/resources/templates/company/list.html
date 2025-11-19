@@ -230,14 +230,16 @@
                         <!-- 광고 배너 -->
                         <div class="content-box pd-0" th:if="${advertisements != null}">
                             <div class="banner-list">
-                                <div class="ad-banner" th:each="advertisement : ${advertisements}">
-                                    <div class="ad-text-box">
-                                        <p class="title" th:text="${advertisement.advertisementMainText}">
-                                        <p class="desc" th:text="${advertisement.advertisementSubText}"></p>
-                                    </div>
-                                    <div class="ad-img">
-                                        <img th:src="${advertisement.filePath}" alt="">
-                                    </div>
+                                <div class="ad-banner" th:each="advertisement : ${advertisements}" th:data-id="${advertisement.id}">
+                                    <a th:href="${advertisement.advertisementLink}">
+                                        <div class="ad-text-box">
+                                            <p class="title" th:text="${advertisement.advertisementMainText}">
+                                            <p class="desc" th:text="${advertisement.advertisementSubText}"></p>
+                                        </div>
+                                        <div class="ad-img">
+                                            <img th:src="${advertisement.filePath}" alt="">
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

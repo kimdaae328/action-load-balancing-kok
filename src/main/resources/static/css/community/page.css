@@ -734,6 +734,9 @@ div {
     width: 100%;
     display: flex;
 }
+.etc-16 .etc-22 {
+    padding: 0 0 20px;
+}
 .etc-23{
     background-color: rgba(86,105,143,0.0600);
     justify-content: center;
