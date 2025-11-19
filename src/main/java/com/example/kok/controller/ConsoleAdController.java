@@ -73,7 +73,7 @@ public class ConsoleAdController {
 
 //    한 달치 광고 목록
     @GetMapping("list/one-month")
-    public List<ConsoleAdNoticeVO> getAdvertisements(){
+    public List<ConsoleAdNoticeDTO> getAdvertisements(){
         return consoleAdService.getAdvertisementsInOneMonth();
     }
 
