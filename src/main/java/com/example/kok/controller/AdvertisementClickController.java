@@ -22,6 +22,6 @@ public class AdvertisementClickController {
 
         Long userId = customUserDetails.getId();
 
-        advertisementClickService.saveAdvertisementClick(dto.getId(), userId);
+        advertisementClickService.saveAdvertisementClick(dto.getAdvertisementId(), userId);
     }
 }
