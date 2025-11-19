@@ -221,23 +221,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const aiBtn = document.querySelector(".ai-btn");
     aiBtn.addEventListener("click", async (e)=>{
         e.preventDefault();
-    //     1. 전체 광고 중 최근 한 달치 조회
-    //     -> fetch, console에 뜨게끔
-        const response1 = await fetch("/enterprise-console/ad/list/one-month");
-        const adList1 = await response.json();
 
+        const response = await fetch("/api/ai/ad/list");
+        const advertisementInfo = await response.json();
 
-    //     2. 내 광고 제목 + 내용
-
-    //     3. 한 달치 광고별 클릭 수
-        const response2 = await fetch("/enterprise-console/ad/list/one-month");
-        const adList2 = await response.json();
-
-    //     4. 한 달동안 로그인한 회원 수
-        const response3 = await fetch("/enterprise-console/ad/list/one-month");
-        const adList3 = await response.json();
-        
-    //     위의 4개 정보를 모두 담아서 FastAPI로 전달
+        const aiResponse = await fetch("http://localhost:8000/api/v1/ai/advertisement/evaluate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            body: JSON.stringify({advertisementInfo: advertisementInfo})
+        });
+        const result = await aiResponse.json();
 
     })
 

@@ -46,9 +46,6 @@ public interface ConsoleAdMapper {
 //    광고 마감 처리
     public void updateAdStatusToInactive();
 
-//    한 달치 광고 목록
-    public List<ConsoleAdNoticeDTO> selectAll();
-
 //    한 달치 클릭 수
     public List<AdvertisementClickDTO> getCountOfClick();
 }

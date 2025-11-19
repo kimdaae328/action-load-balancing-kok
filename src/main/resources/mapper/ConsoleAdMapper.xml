@@ -152,13 +152,6 @@
         ]]>
     </update>
 
-    <select id="selectAll">
-        select * from tbl_advertisement
-        <![CDATA[
-        where (now() - interval '30 day') < updated_datetime
-        ]]>
-    </select>
-
     <select id="getCountOfClick">
         select advertisement_sub_text, advertisement_main_text, ac.click_count
         from tbl_advertisement a

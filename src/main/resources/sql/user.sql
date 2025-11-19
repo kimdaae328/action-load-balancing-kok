@@ -26,3 +26,4 @@ select * from tbl_user
 DELETE FROM tbl_user
 WHERE id = 4;
 
+select * from tbl_user;

@@ -71,10 +71,4 @@ public class ConsoleAdController {
         return "enterprise-console/advertisement/console-add-upload";
     }
 
-//    한 달치 광고 목록
-    @GetMapping("list/one-month")
-    public List<ConsoleAdNoticeDTO> getAdvertisements(){
-        return consoleAdService.getAdvertisementsInOneMonth();
-    }
-
 }

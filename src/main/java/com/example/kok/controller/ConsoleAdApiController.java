@@ -79,12 +79,6 @@ public class ConsoleAdApiController implements ConsoleAdApiControllerDocs {
         return ResponseEntity.ok("success");
     }
 
-//    한 달치 광고 목록
-    @GetMapping("list/one-month")
-    public List<ConsoleAdNoticeDTO> getAdvertisements(){
-        return adService.getAdvertisementsInOneMonth();
-    }
-
 //    한 달치 광고 클릭수
     @GetMapping("list/click")
     public List<AdvertisementClickDTO> getAdvertisementsClick(){

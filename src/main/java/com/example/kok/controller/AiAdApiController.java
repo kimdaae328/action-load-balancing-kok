@@ -24,9 +24,6 @@ public class AiAdApiController {
     @GetMapping("/list")
     public ResponseEntity<AiAdvertisementDTO> getAiAdvertisementList() {
 
-        // 광고 한 달치 목록
-        List<ConsoleAdNoticeDTO> adListOneMonth = adService.getAdvertisementsInOneMonth();
-
         // 광고 클릭 데이터
         List<AdvertisementClickDTO> adClickList = adService.getAdvertisementsCountOfClick();
 
@@ -34,7 +31,6 @@ public class AiAdApiController {
         int loginCountInOneMonth = memberService.getLoginCountInOneMonth();
 
         AiAdvertisementDTO responseDTO = new AiAdvertisementDTO();
-        responseDTO.setAdListOneMonth(adListOneMonth);
         responseDTO.setAdClickList(adClickList);
         responseDTO.setLoginCountInOneMonth(loginCountInOneMonth);
 

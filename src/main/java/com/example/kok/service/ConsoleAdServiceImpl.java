@@ -206,12 +206,6 @@ public class ConsoleAdServiceImpl implements ConsoleAdService {
         consoleAdDAO.setAdStatusToInactive();
     }
 
-//    한 달치 광고 목록
-    @Override
-    public List<ConsoleAdNoticeDTO> getAdvertisementsInOneMonth() {
-        return consoleAdDAO.findAdvertisements();
-    }
-
 //    한 달치 광고 클릭 수
     @Override
     public List<AdvertisementClickDTO> getAdvertisementsCountOfClick() {

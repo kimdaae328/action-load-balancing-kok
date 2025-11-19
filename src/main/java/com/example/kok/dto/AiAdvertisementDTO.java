@@ -10,7 +10,6 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 public class AiAdvertisementDTO {
-    private List<ConsoleAdNoticeDTO> adListOneMonth; // 한 달치 광고 목록
     private List<AdvertisementClickDTO> adClickList; // 한 달치 광고 클릭수
     private int loginCountInOneMonth; // 한 달치 로그인한 수
 }
