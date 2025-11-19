@@ -71,4 +71,8 @@ public interface MemberMapper {
 //    로그인 시, 로그인 시간 업데이트
     public void updateUpdatedDate(Long id);
 
+//    한 달치 로그인 수
+    public int getLoginCountInOneMonth();
+
+
 }

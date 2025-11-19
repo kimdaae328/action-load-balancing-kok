@@ -1497,6 +1497,18 @@ function bannerActiveFn() {
 
     if (!banners) return;
 
+    banners.forEach(banner => {
+        banner.addEventListener("click", async (e) => {
+            const adId = banner.dataset.id;
+
+            await fetch("/advertisement/click", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ advertisementId: adId })
+            });
+        });
+    });
+
     // 모두 숨기기
     function hideAll() {
         banners.forEach((banner) => banner.classList.remove("active"));

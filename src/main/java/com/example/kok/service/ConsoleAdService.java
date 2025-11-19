@@ -1,6 +1,7 @@
 package com.example.kok.service;
 
 import com.example.kok.domain.ConsoleAdNoticeVO;
+import com.example.kok.dto.AdvertisementClickDTO;
 import com.example.kok.dto.ConsoleAdNoticeCriteriaDTO;
 import com.example.kok.dto.ConsoleAdNoticeDTO;
 import com.example.kok.enumeration.Status;
@@ -32,7 +33,10 @@ public interface ConsoleAdService {
     public void closeAd();
 
 //    한 달치 광고 목록
-    public List<ConsoleAdNoticeVO> getAdvertisementsInOneMonth();
+    public List<ConsoleAdNoticeDTO> getAdvertisementsInOneMonth();
+
+//    한 달치 클릭수
+    public List<AdvertisementClickDTO> getAdvertisementsCountOfClick();
 
     default ConsoleAdNoticeVO toConsoleAdVO(ConsoleAdNoticeDTO consoleAdDTO){
         return ConsoleAdNoticeVO.builder()

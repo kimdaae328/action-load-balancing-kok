@@ -1,15 +1,17 @@
 package com.example.kok.dto;
 
-import com.example.kok.enumeration.RequestStatus;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
-@Getter @Setter
+@Getter
+@Setter
 @ToString
-@NoArgsConstructor
 public class AdvertisementClickDTO {
-    private Long advertisementId;
+    private Long id;
+    private String advertisementSubText;
+    private String advertisementMainText;
+    private Long clickCount;
 }

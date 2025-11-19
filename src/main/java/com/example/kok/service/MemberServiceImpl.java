@@ -303,4 +303,10 @@ public class MemberServiceImpl implements MemberService {
     public void updateUpdatedDate(Long id) {
         memberDAO.setUpdatedDate(id);
     }
+
+    //    한 달치 로그인 수
+    @Override
+    public int getLoginCountInOneMonth() {
+        return memberDAO.findLoginCountInOneMonth();
+    }
 }

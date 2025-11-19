@@ -1,6 +1,7 @@
 package com.example.kok.repository;
 
 import com.example.kok.domain.ConsoleAdNoticeVO;
+import com.example.kok.dto.AdvertisementClickDTO;
 import com.example.kok.dto.ConsoleAdNoticeDTO;
 import com.example.kok.enumeration.RequestStatus;
 import com.example.kok.enumeration.Status;
@@ -67,8 +68,13 @@ public class ConsoleAdDAO {
     }
 
 //    한 달치 광고 목록
-    public List<ConsoleAdNoticeVO> findAdvertisements(){
+    public List<ConsoleAdNoticeDTO> findAdvertisements(){
         return consoleAdMapper.selectAll();
+    }
+
+//    한 달치 클릭 수
+    public List<AdvertisementClickDTO> findCountOfClick() {
+        return consoleAdMapper.getCountOfClick();
     }
 
 }

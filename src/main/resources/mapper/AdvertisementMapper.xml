@@ -7,7 +7,7 @@
         from tbl_advertisement a
                  join tbl_company c on a.company_id = c.user_id
         where a.advertisement_request_status = 'accept'
-        and a.advertisement_status = 'active'
-        and now() between a.advertise_start_datetime and a.advertise_end_datetime
+          and a.advertisement_status = 'active'
+          and now() between a.advertise_start_datetime and a.advertise_end_datetime
     </select>
 </mapper>

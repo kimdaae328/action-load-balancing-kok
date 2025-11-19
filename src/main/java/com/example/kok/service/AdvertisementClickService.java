@@ -1,5 +1,5 @@
 package com.example.kok.service;
 
 public interface AdvertisementClickService {
-    void saveAdvertisementClick(Long advertisementId, Long userId);
+    public void saveAdvertisementClick(Long advertisementId, Long userId);
 }

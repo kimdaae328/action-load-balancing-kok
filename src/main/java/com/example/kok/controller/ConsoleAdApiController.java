@@ -25,16 +25,13 @@ public class ConsoleAdApiController implements ConsoleAdApiControllerDocs {
                                                             @PathVariable("page") int page,
                                                             @RequestParam(required = false) String keyword) {
 
-        log.info("광고 리스트 요청: companyId={}, page={}, keyword={}", companyId, page, keyword);
 
         ConsoleAdNoticeCriteriaDTO adCriteriaDTO = adService.getList(companyId, page, keyword);
         if (adCriteriaDTO == null) {
-            log.warn("⚠️ adCriteriaDTO is null!");
             return ResponseEntity.ok(new ConsoleAdNoticeCriteriaDTO());
         }
 
         if (adCriteriaDTO.getAdLists() == null || adCriteriaDTO.getAdLists().isEmpty()) {
-            log.info("📭 광고 리스트 없음");
             return ResponseEntity.ok(adCriteriaDTO);
         }
 
@@ -80,6 +77,18 @@ public class ConsoleAdApiController implements ConsoleAdApiControllerDocs {
     public ResponseEntity<?> deleteAd(@PathVariable("id") Long advertisementId) {
         adService.deleteAdvertisement(advertisementId);
         return ResponseEntity.ok("success");
+    }
+
+//    한 달치 광고 목록
+    @GetMapping("list/one-month")
+    public List<ConsoleAdNoticeDTO> getAdvertisements(){
+        return adService.getAdvertisementsInOneMonth();
+    }
+
+//    한 달치 광고 클릭수
+    @GetMapping("list/click")
+    public List<AdvertisementClickDTO> getAdvertisementsClick(){
+        return adService.getAdvertisementsCountOfClick();
     }
 
 }

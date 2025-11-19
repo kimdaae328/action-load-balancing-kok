@@ -142,4 +142,9 @@ public class MemberDAO {
     public void setUpdatedDate(Long id){
         memberMapper.updateUpdatedDate(id);
     }
+
+//    한 달치 로그인 수
+    public int findLoginCountInOneMonth(){
+        return memberMapper.getLoginCountInOneMonth();
+    }
 }

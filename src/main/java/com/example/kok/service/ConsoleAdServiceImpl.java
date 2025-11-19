@@ -211,7 +211,13 @@ public class ConsoleAdServiceImpl implements ConsoleAdService {
 
 //    한 달치 광고 목록
     @Override
-    public List<ConsoleAdNoticeVO> getAdvertisementsInOneMonth() {
+    public List<ConsoleAdNoticeDTO> getAdvertisementsInOneMonth() {
         return consoleAdDAO.findAdvertisements();
+    }
+
+//    한 달치 광고 클릭 수
+    @Override
+    public List<AdvertisementClickDTO> getAdvertisementsCountOfClick() {
+        return consoleAdDAO.findCountOfClick();
     }
 }

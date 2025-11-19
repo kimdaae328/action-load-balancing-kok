@@ -48,4 +48,11 @@ public class MemberController implements MemberControllerDocs {
         return ResponseEntity.ok().build();
     }
 
+//    한 달치 로그인 수
+    @GetMapping("/list/login-count")
+    public int getLoginCountInOneMonth() {
+        return memberService.getLoginCountInOneMonth();
+    }
+
+
 }
