@@ -58,6 +58,5 @@ const adService = (() => {
         return await response.text();
     };
 
-    // 리턴
     return { register:register, update:update };
 })();
