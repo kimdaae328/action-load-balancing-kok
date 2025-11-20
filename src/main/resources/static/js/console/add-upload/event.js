@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const response = await fetch("/api/ai/ad/list");
         const advertisementInfo = await response.json();
 
-        const aiResponse = await fetch("http://localhost:8000/api/v1/ai/advertisement/evaluate", {
+        const aiResponse = await fetch("https://quote-arch-adipex-tear.trycloudflare.com/api/v1/ai/advertisement/evaluate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
