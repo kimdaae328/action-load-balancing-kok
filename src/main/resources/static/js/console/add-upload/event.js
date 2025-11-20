@@ -221,8 +221,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const aiBtn = document.querySelector(".ai-btn");
     aiBtn.addEventListener("click", async (e)=>{
         e.preventDefault();
-        const inputMain = document.querySelector("#ad-main-text").value;
-        const inputSub = document.querySelector("#ad-sub-text").value;
+        const inputMain = document.querySelector("#ad-main-text").value.trim();
+        const inputSub = document.querySelector("#ad-sub-text").value.trim();
+
+        if (!inputMain || !inputSub) {
+            alert("광고 제목과 광고 내용을 입력해주세요.");
+            return;
+        }
+
         const response = await fetch("/api/ai/ad/list");
         const advertisementInfo = await response.json();
 
