@@ -242,9 +242,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const result = await aiResponse.json();
         // console.log(result);
 
-        const analyzeResult = document.querySelector(".analyze-result-num");
+        const analyzeResult = document.querySelector(".analyze-result");
         analyzeResult.innerHTML = `
-            <p class="analyze-result">
+            <p>
                 지난 한 달간 가장 높은 클릭률을 기록한 광고와 
                 <span class="analyze-result-num">${result.result}</span>% 유사합니다.
             </p>
