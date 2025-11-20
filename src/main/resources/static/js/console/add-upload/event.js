@@ -240,7 +240,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         });
         const result = await aiResponse.json();
-        // console.log(result);
 
         const analyzeResult = document.querySelector(".analyze-result");
         analyzeResult.innerHTML = `
