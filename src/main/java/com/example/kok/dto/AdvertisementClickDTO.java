@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @ToString
 public class AdvertisementClickDTO {
-    private Long advertisementId;
+    private Long id;
     private String advertisementSubText;
     private String advertisementMainText;
     private Long clickCount;
