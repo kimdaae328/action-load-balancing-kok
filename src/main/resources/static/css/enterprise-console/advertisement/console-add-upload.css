@@ -617,7 +617,7 @@ input:disabled {
 }
 
 .analyze-result {
-    font-size: 14px;
+    font-size: 16px;
     background: linear-gradient(90deg, #4bb5ff, #9b5cff);
     -webkit-background-clip: text;
     color: transparent;
