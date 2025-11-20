@@ -241,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         const result = await aiResponse.json();
         console.log(result);
+        document.querySelector(".analyze-result").textContent(result);
 
     })
 
