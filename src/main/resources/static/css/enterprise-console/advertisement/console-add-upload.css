@@ -617,8 +617,12 @@ input:disabled {
 }
 
 .analyze-result {
-    font-size: 16px;
+    font-size: 22px;
     background: linear-gradient(90deg, #4bb5ff, #9b5cff);
     color: transparent;
     -webkit-background-clip: text;
+}
+
+.analyze-result-span {
+    font-size: 22px;
 }
