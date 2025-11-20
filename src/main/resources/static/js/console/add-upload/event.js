@@ -221,7 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const aiBtn = document.querySelector(".ai-btn");
     aiBtn.addEventListener("click", async (e)=>{
         e.preventDefault();
-
+        const inputMain = document.querySelector("#ad-main-text");
+        const inputSub = document.querySelector("#ad-sub-text");
         const response = await fetch("/api/ai/ad/list");
         const advertisementInfo = await response.json();
 
@@ -230,7 +231,13 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
             },
-            body: JSON.stringify({advertisementInfo: advertisementInfo})
+            body: JSON.stringify({
+                advertisementInfo: advertisementInfo,
+                registeringInfo: {
+                    advertisementMainText: inputMain,
+                    advertisementSubText: inputSub
+                }
+            })
         });
         const result = await aiResponse.json();
 
