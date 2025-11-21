@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const response = await fetch("/api/ai/ad/list");
         const advertisementInfo = await response.json();
 
-        const aiResponse = await fetch("https://strongly-acknowledged-lighter-states.trycloudflare.com/api/v1/ai/advertisement/evaluate", {
+        const aiResponse = await fetch("https://bloom-doug-vice-trading.trycloudflare.com/api/v1/ai/advertisement/evaluate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
